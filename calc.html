@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        body{
+            background-image: linear-gradient(120deg, green, yellow);
+            min-height: 100vh;
+        }
+
+        td{
+            /* padding: 10px 5px 10px 15px; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn{
+            height: 60px;
+            width: 60px;
+        }
+
+        input{
+            /* padding: 25px; */
+            font-size: large;
+            margin: auto;
+            align-self: center;
+            text-align: center;
+            color: white;
+            background-color: rgb(5, 5, 46);
+        }
+
+        input:hover{
+            background-color: rgb(89, 247, 89);
+        }
+
+        input:active{
+            background-color: rgb(89, 247, 89);
+        }
+
+        #text{
+            /* padding: 20px; */
+            width: 243px;
+            height: 65px;
+            text-align: right;
+            background-color: white;
+            color: black;
+            font-size: 35px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #equal{
+            height: 123px;
+            background-color: rgb(62, 190, 190);
+        }
+
+        #clr{
+            background-color: rgb(228, 106, 36);
+        }
+
+        .container{
+            background-color: indigo;
+            padding: 10px 0px;
+            margin: 0px 610px;
+            border-radius: 15px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <center>
+    <script>
+        var date = new Date();
+        document.write("Date: " + date.getDate()+ " - " + (date.getMonth()+1)+" - "+date.getFullYear() +"<br>");
+       function dis(x){
+           document.getElementById('text').value += x;
+       }
+       function solve(){
+           var p = document.getElementById('text').value;
+           var q = eval(p);
+           document.getElementById('text').value = q;
+       }
+       function clr(){
+           document.getElementById('text').value = "";
+       }
+
+    </script>
+    <br>
+    <br>
+    <h2 style="color: indigo;"> Calculator</h2>
+    <div class="container">
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" name="" value="" id = 'text'></td>
+             
+        </tr>
+
+        <tr>
+            <td><input type="button" value="C" onclick="clr()" class="btn" id="clr"/> </td>
+            <td><input type="button" value="%" onclick="dis('%')" class="btn"/> </td> 
+            <td><input type="button" value="/" onclick="dis('/')" class="btn"/> </td> 
+            <td><input type="button" value="*" onclick="dis('*')" class="btn"/> </td> 
+        </tr>
+
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" class="btn"/> </td> 
+            <td><input type="button" value="8" onclick="dis('8')" class="btn"/> </td> 
+            <td><input type="button" value="9" onclick="dis('9')" class="btn"/> </td> 
+            <td><input type="button" value="+" onclick="dis('+')" class="btn"/> </td> 
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" class="btn"/> </td> 
+            <td><input type="button" value="5" onclick="dis('5')" class="btn"/> </td> 
+            <td><input type="button" value="6" onclick="dis('6')" class="btn"/> </td> 
+            <td><input type="button" value="-" onclick="dis('-')" class="btn"/> </td> 
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="dis('1')" class="btn"/> </td> 
+            <td><input type="button" value="2" onclick="dis('2')" class="btn"/> </td> 
+            <td><input type="button" value="3" onclick="dis('3')" class="btn"/> </td> 
+            <td rowspan="2"><input type="button" value="=" onclick="solve()" class="btn" id="equal"/> </td> 
+        </tr>
+
+        <tr>
+            <td><input type="button" value="." onclick="dis('.')" class="btn"/> </td> 
+            <td><input type="button" value="0" onclick="dis('0')" class="btn"/> </td> 
+            <td><input type="button" value="00" onclick="dis('00')" class="btn"/> </td> 
+            
+        </tr>
+
+    </table>
+    </div>
+</center>
+</body>
+</html>
